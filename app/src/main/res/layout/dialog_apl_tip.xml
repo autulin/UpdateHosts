@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingTop="25dp"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="使用前请最好备份原版hosts\n（点击右上角的“备份”）"
+        android:id="@+id/textView3"
+        android:textColor="@android:color/black" />
+    <CheckBox
+        android:layout_below="@id/textView3"
+        android:id="@+id/no_more_chk"
+        android:checked="true"
+        android:text="下次不再提示"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
