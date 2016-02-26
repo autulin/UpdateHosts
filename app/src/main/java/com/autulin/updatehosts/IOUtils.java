@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
-
 public class IOUtils {
     public static final String PREF_FIRST_TIME = "pref_first_time";
     public static final String PREF_STORE_DATA = "pref_store_data";
@@ -47,7 +46,7 @@ public class IOUtils {
         return sp.getString(PREF_STORE_DATA, null);
     }
 
-    public static String readStringFromRaw(Context context, int id){
+    public static String readStringFromRaw(Context context, int id) {
         String line = null;
         StringBuffer stringBuffer = new StringBuffer();
         try {
@@ -60,7 +59,6 @@ public class IOUtils {
         }
         return stringBuffer.toString();
     }
-
 
 
 }

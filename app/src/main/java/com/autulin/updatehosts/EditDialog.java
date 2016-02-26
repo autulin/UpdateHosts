@@ -3,7 +3,6 @@ package com.autulin.updatehosts;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -14,12 +13,11 @@ import android.widget.Toast;
 public class EditDialog extends AlertDialog {
     Context mContext;
     MyApplication myApplication;
-    EditText title,address;
+    EditText title, address;
     LinearLayout addressll;
 
 
     /**
-     *
      * @param context
      * @param position 编辑数据传送位置值，添加数据传-1，备份数据传-2
      */
@@ -35,14 +33,14 @@ public class EditDialog extends AlertDialog {
         addressll = (LinearLayout) v.findViewById(R.id.address_ll);
 
         //添加备份
-        if(position == -2){
+        if (position == -2) {
             this.setTitle("备份当前源");
             addressll.setVisibility(View.GONE);
 
             this.setButton(DialogInterface.BUTTON_POSITIVE, "确定", new OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    if (title.getText().toString().equals("") ) {
+                    if (title.getText().toString().equals("")) {
                         Toast.makeText(mContext, "输入内容不能为空", Toast.LENGTH_SHORT).show();
                     } else {
                         myApplication.bakHosts(title.getText().toString());
@@ -50,12 +48,12 @@ public class EditDialog extends AlertDialog {
                 }
             });
 
-        }else{
+        } else {
 
             //添加源
-            if(position == -1){
+            if (position == -1) {
                 this.setTitle("添加源");
-            }else {
+            } else {
 
                 //编辑源
                 title.setText(myApplication.getTitle(position));
@@ -66,13 +64,13 @@ public class EditDialog extends AlertDialog {
             this.setButton(DialogInterface.BUTTON_POSITIVE, "确定", new OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    if(title.getText().toString().equals("") || address.getText().toString().equals("")){
-                        Toast.makeText(mContext,"输入内容不能为空",Toast.LENGTH_SHORT).show();
-                    }else {
-                        if(position == -1){
-                            myApplication.add2List(title.getText().toString(),address.getText().toString(),false);
-                        }else {
-                            myApplication.editList(position,title.getText().toString(),address.getText().toString());
+                    if (title.getText().toString().equals("") || address.getText().toString().equals("")) {
+                        Toast.makeText(mContext, "输入内容不能为空", Toast.LENGTH_SHORT).show();
+                    } else {
+                        if (position == -1) {
+                            myApplication.add2List(title.getText().toString(), address.getText().toString(), false);
+                        } else {
+                            myApplication.editList(position, title.getText().toString(), address.getText().toString());
                         }
                     }
                 }
@@ -85,7 +83,7 @@ public class EditDialog extends AlertDialog {
                     if (position == -1) { //如果是添加源的时候直接点“应用”,则先添加，后应用
                         myApplication.applyHosts(myApplication.add2List(title.getText().toString(), address.getText().toString(), false));
                     } else {
-                        myApplication.editList(position,title.getText().toString(),address.getText().toString());
+                        myApplication.editList(position, title.getText().toString(), address.getText().toString());
                         myApplication.applyHosts(position);
                     }
                 }

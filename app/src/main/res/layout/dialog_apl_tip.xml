@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:paddingTop="25dp"
     android:paddingLeft="25dp"
     android:paddingRight="25dp"
@@ -13,6 +14,7 @@
         android:text="使用前请最好备份原版hosts\n（点击右上角的“备份”）"
         android:id="@+id/textView3"
         android:textColor="@android:color/black" />
+
     <CheckBox
         android:layout_below="@id/textView3"
         android:id="@+id/no_more_chk"

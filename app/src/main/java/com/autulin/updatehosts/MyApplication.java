@@ -114,7 +114,7 @@ public class MyApplication extends Application {
         this.dataChangeListener = dataChangeListener;
     }
 
-    public void bakHosts(String title){
+    public void bakHosts(String title) {
         add2List(title, "（备份的文件）", true);
 
         //备份操作
@@ -125,7 +125,7 @@ public class MyApplication extends Application {
         Log.e("root", execResult.toString());
     }
 
-    public void applyHosts(final int position){
+    public void applyHosts(final int position) {
         if (this.isBacked(position)) { //恢复文件
             List<String> commnandList = new ArrayList<>();
             commnandList.add("mount -o rw,remount /system");
@@ -152,14 +152,15 @@ public class MyApplication extends Application {
                 }
             });
 
-           //之后去MainActivity里面的Listener等结果吧
+            //之后去MainActivity里面的Listener等结果吧
         }
     }
-    public void deleteHosts(final int position){
 
-        if(!isBacked(position)){
+    public void deleteHosts(final int position) {
+
+        if (!isBacked(position)) {
             FileDownloader.delete(getAddress(position), true, null); //删除文件
-        }else {
+        } else {
             List<String> commnandList = new ArrayList<>();
             commnandList.add("rm " + IOUtils.FILE_PATH + this.getTitle(position));
             ShellUtils.CommandResult execResult = ShellUtils.execCommand(commnandList, false, true);

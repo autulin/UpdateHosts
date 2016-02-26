@@ -6,7 +6,7 @@ public class HostsBean {
     String address;
     boolean isBacked;
 
-    public HostsBean(){
+    public HostsBean() {
     }
 
     public HostsBean(String title, String address, boolean isBacked) {

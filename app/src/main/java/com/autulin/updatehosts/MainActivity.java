@@ -16,10 +16,9 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
@@ -251,11 +250,11 @@ public class MainActivity extends AppCompatActivity implements MyApplication.Dat
             }
             new AlertDialog.Builder(this).setTitle("Hosts一键更新 " + versionName + "Beta").setMessage(
                     "更新Hosts是最方便快捷的科学上网方法，并且还可以去除广告，" +
-                    "缺点是对部分CDN无效（如可以上Google Play但不能下载东西，能打开Youtube但不一定能看视屏），" +
-                    "另外有一定的时效性，需定期更新，这是关键，故造此轮，可以更方便的更新各种Hosts源，平时用用Google什么的毫无压力\n\n" +
-                    "Powered By autulin\n" +
-                    "感谢以下开源软件的支持：\n" +
-                    "SwipeMenuListView FileDownloader Fastjson Trinea\n" +
+                            "缺点是对部分CDN无效（如可以上Google Play但不能下载东西，能打开Youtube但不一定能看视屏），" +
+                            "另外有一定的时效性，需定期更新，这是关键，故造此轮，可以更方便的更新各种Hosts源，平时用用Google什么的毫无压力\n\n" +
+                            "Powered By autulin\n" +
+                            "感谢以下开源软件的支持：\n" +
+                            "SwipeMenuListView FileDownloader Fastjson Trinea\n" +
                             "最后警告：Root有风险，操作需谨慎，本人不承担一切后果！").setPositiveButton("确定", null).create().show();
         }
 
@@ -327,10 +326,7 @@ public class MainActivity extends AppCompatActivity implements MyApplication.Dat
         }
 
         public boolean getSwipEnableByPosition(int position) {
-            if (position % 2 == 0) {
-                return false;
-            }
-            return true;
+            return position % 2 != 0;
         }
     }
 
